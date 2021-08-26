@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Baber</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
+</head>
+<body>
+<header th:insert="blocks/header::header"></header>
+<div class="pb-3 pt-3" style="background-color: #363636">
+    <form action="filter" method="post">
+        <div class="container mt-3" style="text-align: right">
+            <h3 style="color: white"><b>Введите название</b></h3>
+            <input type="text" name="title" placeholder="Поиск по названию" class=" mb-3" style="width: 300px;font-size: 13px;
+                                                                                                                padding: 6px 0 4px 10px;
+                                                                                                                border: 1px solid #cecece;
+                                                                                                                background: #F6F6f6;
+                                                                                                                border-radius: 8px;"></br>
+            <button type="submit" class="btn btn-success mb-2">Найти</button>
+        </div>
+    </form>
+<!--    <div class="container mt-5 mb-5">-->
+<!--        <h1 style="color: white">Статьи</h1>-->
+<!--        <div th:each="el : ${posts}" class="alert alert-info mt-2">-->
+<!--            <h3 th:text="${el.title}"></h3>-->
+<!--            <p th:text="${el.anons}"></p>-->
+<!--            <p><b>©<span th:text="${el.authorName}"></span> </b></p>-->
+<!--            <a th:href="'/blog/' + ${el.id}" class="btn btn-warning"> Подробнее</a>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="container mt-5 mb-5">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative " th:each="el : ${posts}" style="background-color: white">
+            <div class="col p-4 d-flex flex-column position-static" >
+                <h2 class="mb-0" th:text="${el.title}"></h2>
+                <div class="mb-1 text-muted">Nov 12</div>
+                <h4 th:text="${el.anons}" class="card-text mb-auto"></h4>
+                <h5>©<span th:text="${el.authorName}"></span></h5>
+                <a href="#" class="stretched-link" th:href="'/blog/' + ${el.id}"></a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="blocks/footer::footer" ></div>
+</body>
+</html>

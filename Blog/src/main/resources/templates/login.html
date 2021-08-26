@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRi5ItEKqHF2JlBWn59m0jMcXT29r3-L-0Qgm4JquBy30W1Q2Fd&usqp=CAU);
+            width: auto;
+            height: auto;
+        }
+        a{
+            color: rgb(248, 245, 245);
+        }
+        a.hover{
+            text-decoration: none;
+        }
+
+        .parrent{
+            width: 900px;
+            height: 900px;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .container{
+            width: 450px;
+            background-color: #182134;
+            text-align: center;
+            box-shadow: 0 -5px 0 #3adbfd;
+            border-radius: 0 0 10px 10px;
+            padding-bottom: 20px;
+            /* vertical-align: middle; */
+        }
+        .container img{
+            width: 120px;
+            height: 120px;
+            margin: -60px 0 30px 0;
+            border: 5px solid #1a394f;
+            border-radius: 50%;
+        }
+        input[type="text"], input[type="password"],input[type="date"],input[type="color"],input[type="tel"],input[type="file"],input[type="email"]{
+            width: 300px;
+            height: 50px;
+            font-size: 18px;
+            margin-bottom:25px;
+            border-radius: 4px;
+            padding-left: 10px;
+            padding-left: 40px;
+        }
+        .dws-submit{
+            width: 200px;
+            padding:13px 30px;
+            margin: 5px 0 20px 0;
+            font-size: 15px;
+            color: #fff;
+            background-color: #2ca8c6;
+            border: none;
+            border-radius: 5px;
+            border-bottom: 4px solid #6ee9fd;
+            cursor: pointer;
+        }
+        .dws-submit:hover{
+            transition: all 0.5s;
+            background: #fff;
+            color: #2c536c;
+        }
+        .dws-input::before{
+            font-family: "FontAwesome";
+            position: absolute;
+            font-size: 40px;
+            padding:10px 0 0 7px;
+            color: #2c536c;
+
+        }
+
+        .dws-input:hover::before{
+            color: #319ebc;
+            transition: all 0.3s;
+        }
+        .dws-input input:hover{
+            box-shadow: 0 0 6px 3px rgba(58, 219, 253, 0.35);
+        }
+        .social i{
+            color: #fff;
+            font-size: 20px;
+            width: 20px;
+            padding: 10px;
+        }
+        .social i:hover{
+            background-color: #fff;
+            color: #1a394f;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="parrent">
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSb1t23Hg0XAtNrs_xuH7RhCmLZNhmb-XoX718tV7qpnJIb-AGg&usqp=CAU" alt="">
+        <form th:action="@{/login}" method="post">
+            <div class="dws-input">
+                <input type="text" name="username" placeholder="login">
+            </div>
+            <div class="dws-input">
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <div><input class="dws-submit" type="submit" name="submit" value="Войти"></div>
+            <br />
+        </form>
+        <input  class="dws-submit" type="button" onclick="location.href='/reg'" value="Зарегистрироваться"><br />
+    </div>
+</div>
+</body>
+</html>

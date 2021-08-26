@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Baber</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
+</head>
+<body>
+<header th:insert="blocks/header::header"></header>
+<main style="background-color: #363636">
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light" style="color: white">Главная страница</h1>
+                <p class="lead text-muted" style="color: white"> К вашему вниманию предлагается небольшая подборочка информации о том, как максимально продуктивно и эффективно можно пользоваться таким замечательным ресурсом как Babёr.</br>
+
+                    Субъективизм, естественно, в этой статье будет присутствовать, так как то, что интересно и полезно лично для меня, кому-то из читателей Babra может показаться банальным и очевидным, но, надеюсь, найдутся и те, кому приведенная ниже информация поможет более полно использовать возможности, доступные на Babre.</br>
+
+                    Лично мне, после авторизации на Babre, кроме отличных статей, очень понравилось следующее: компетентность авторов, саморегуляция, дружеское сообщество, удобные инструменты для создания статей и коммуникации.</p>
+                <p>
+                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:insert="blocks/footer::footer"></div>
+
+</body>
+</html>
